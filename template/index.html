@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AC List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+    <h1 align="center">Ac List</h1>
+    <div class="container">
+        <form method="post" action="http://127.0.0.1:5000/added">
+           Company Name: <input type="text" class="form-control" name="cname" placeholder="Please enter your AC company name"> <br>
+            Ac Model Number: <input type="text" class="form-control" name="model" placeholder="Please enter your AC model "> <br>
+            Shop Name: <input type="text" class="form-control" name="shop" placeholder="Please enter your Purchase shop"> <br>
+            Price: <input type="text" class="form-control" name="price" placeholder="Please enter your AC Price"> <br>
+            Installation Price: <input type="text" class="form-control" name="install" placeholder="Please enter Your Installation price"> <br>
+            Offers:<Input type="text" class="form-control" name="offer" placeholder="If Offer is There"><br>
+            <input type="submit" class="btn btn-outline-success">
+
+
+        </form>
+
+    </div>
+    <br>
+    <div class="container">
+
+
+
+        <table class="table table-dark">
+
+
+    <tr>
+      <th >Company name</th>
+      <th >Ac Model Number</th>
+      <th >shop</th>
+      <th >Price</th>
+       <th >Installation Price</th>
+        <th>Total Price</th>
+        <th>Offer</th>
+    </tr>
+
+
+
+{% for data in data %}
+    <tr>
+      
+
+       <td align="center">{{data.cname}}</td>
+        <td align="center">{{data.acmodel}}</td>
+        <td align="center">{{data.shop}}</td>
+        <td align="center">{{data.acprice}}</td>
+        <td align="center">{{data.install}}</td>
+        <td align="center">{{data.totalprice}}</td>
+        <td align="center">{{data.offer}}</td>
+
+
+
+
+    </tr>
+              {% endfor %}
+
+
+</table>
+
+
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
